@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Onboarding — OmniCut Media</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/page.css">
+</head>
+<body>
+<header>
+  <a href="index.html" class="brand"><i></i>OmniCut<b>Media</b></a>
+  <a class="back" href="index.html">← Back to site</a>
+</header>
+
+<main class="wrap">
+  <div class="eyebrow">Client onboarding</div>
+  <h1>Welcome aboard. <em>Let's get you set up.</em></h1>
+  <p class="intro">This form gives us everything we need to build your website and set up your AI Business Brain. It takes about 15 minutes. Answer what you can. Anything you skip, we'll ask about on our call.</p>
+
+  <nav class="steps-bar" aria-label="Form sections">
+    <a href="#s1">1 · You</a><a href="#s2">2 · Package</a><a href="#s3">3 · Your business</a><a href="#s4">4 · AI Business Brain</a><a href="#s5">5 · Website</a><a href="#s6">6 · Access</a><a href="#s7">7 · Confirm</a>
+  </nav>
+
+  <form class="onb" id="onb" novalidate>
+    <fieldset id="s1">
+      <legend>1 · About you</legend>
+      <div class="row">
+        <label class="f">Your name *<input type="text" name="Name" required autocomplete="name"></label>
+        <label class="f">Business name *<input type="text" name="Business name" required autocomplete="organization"></label>
+      </div>
+      <div class="row">
+        <label class="f">Email *<input type="email" name="Email" required autocomplete="email"></label>
+        <label class="f">Mobile / WhatsApp *<input type="tel" name="Phone" required autocomplete="tel"></label>
+      </div>
+      <div class="row">
+        <label class="f">ABN <small>(optional)</small><input type="text" name="ABN" inputmode="numeric"></label>
+        <label class="f">Best way to reach you
+          <select name="Preferred contact"><option>WhatsApp</option><option>Phone call</option><option>Email</option></select>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset id="s2">
+      <legend>2 · Your package</legend>
+      <div class="pkg-pick">
+        <label><input type="radio" name="Package" value="Launch package ($3,500 AUD once-off)" checked><b>Launch package</b><span>Website build or rebuild + AI Business Brain. $3,500 AUD once-off, 30 days of support included.</span></label>
+        <label><input type="radio" name="Package" value="Monthly retainer ($1,999 AUD/month)"><b>Monthly retainer</b><span>Website care + AI business consulting. $1,999 AUD/month, 3-month minimum.</span></label>
+      </div>
+      <label class="agree"><input type="checkbox" name="Interested in both" value="Yes">I'd like the Launch package now and the monthly retainer after my 30 days of support.</label>
+    </fieldset>
+
+    <fieldset id="s3">
+      <legend>3 · Your business</legend>
+      <label class="f">What does your business do? *<textarea name="What the business does" rows="3" required placeholder="In a few sentences, as you'd explain it to a new customer."></textarea></label>
+      <label class="f">Your main services or products, with prices<textarea name="Services and prices" rows="4" placeholder="e.g. Bathroom renovation from $15,000 · Leak repair $180 call-out"></textarea></label>
+      <div class="row">
+        <label class="f">Area you serve<input type="text" name="Service area" placeholder="e.g. Gold Coast & Brisbane"></label>
+        <label class="f">Opening hours<input type="text" name="Opening hours" placeholder="e.g. Mon–Fri 7am–5pm"></label>
+      </div>
+      <label class="f">Who is your ideal customer?<textarea name="Ideal customer" rows="2"></textarea></label>
+      <label class="f">Competitors or businesses you admire<textarea name="Competitors" rows="2" placeholder="Names or website links"></textarea></label>
+      <p class="hint">What do you most want from this? Tick all that apply.</p>
+      <div class="checks">
+        <label><input type="checkbox" name="Goals" value="More enquiries and leads">More enquiries and leads</label>
+        <label><input type="checkbox" name="Goals" value="A better-looking website">A better-looking website</label>
+        <label><input type="checkbox" name="Goals" value="Save time on admin and emails">Save time on admin and emails</label>
+        <label><input type="checkbox" name="Goals" value="Answer customers after hours">Answer customers after hours</label>
+        <label><input type="checkbox" name="Goals" value="Show up higher on Google">Show up higher on Google</label>
+        <label><input type="checkbox" name="Goals" value="Keep my tech secure and up to date">Keep my tech secure and up to date</label>
+      </div>
+    </fieldset>
+
+    <fieldset id="s4">
+      <legend>4 · Your AI Business Brain</legend>
+      <p class="hint">This is what your AI assistant learns from. The more detail you give us, the better it answers.</p>
+      <label class="f">The questions customers ask you most<textarea name="Top customer questions" rows="5" placeholder="List up to 10 questions, and your usual answer to each if you can."></textarea></label>
+      <label class="f">Your policies<textarea name="Policies" rows="3" placeholder="Refunds, cancellations, warranties, deposits, payment terms…"></textarea></label>
+      <label class="f">Anything the AI should never say or promise<textarea name="AI must not" rows="2" placeholder="e.g. never quote exact prices for custom jobs, never promise same-day service"></textarea></label>
+      <div class="row">
+        <label class="f">Tone of voice
+          <select name="Tone"><option>Friendly and casual</option><option>Professional and polished</option><option>Warm and caring</option><option>Bold and energetic</option></select>
+        </label>
+        <label class="f">Where should new leads go?
+          <select name="Leads go to"><option>Email</option><option>WhatsApp</option><option>Both email and WhatsApp</option></select>
+        </label>
+      </div>
+      <div class="row">
+        <label class="f">Email for new leads<input type="email" name="Lead email"></label>
+        <label class="f">Booking or quoting system you use <small>(if any)</small><input type="text" name="Booking system" placeholder="e.g. Calendly, ServiceM8, Fresha"></label>
+      </div>
+    </fieldset>
+
+    <fieldset id="s5">
+      <legend>5 · Your website</legend>
+      <div class="row">
+        <label class="f">Current website <small>(if you have one)</small><input type="url" name="Current website" placeholder="https://"></label>
+        <label class="f">Domain you want to use<input type="text" name="Domain" placeholder="e.g. yourbusiness.com.au"></label>
+      </div>
+      <p class="hint">Pages you need. Tick all that apply.</p>
+      <div class="checks">
+        <label><input type="checkbox" name="Pages" value="Home" checked>Home</label>
+        <label><input type="checkbox" name="Pages" value="About">About</label>
+        <label><input type="checkbox" name="Pages" value="Services">Services</label>
+        <label><input type="checkbox" name="Pages" value="Pricing">Pricing</label>
+        <label><input type="checkbox" name="Pages" value="Gallery / portfolio">Gallery / portfolio</label>
+        <label><input type="checkbox" name="Pages" value="Reviews">Reviews</label>
+        <label><input type="checkbox" name="Pages" value="Bookings">Bookings</label>
+        <label><input type="checkbox" name="Pages" value="Blog">Blog</label>
+        <label><input type="checkbox" name="Pages" value="Contact" checked>Contact</label>
+      </div>
+      <label class="f">Websites you like the look of, and why<textarea name="Sites they like" rows="2"></textarea></label>
+      <div class="row">
+        <label class="f">Brand colours<input type="text" name="Brand colours" placeholder="e.g. navy and gold, or hex codes"></label>
+        <label class="f">Link to your logo, photos and videos<input type="url" name="Files link" placeholder="Google Drive or Dropbox link"></label>
+      </div>
+      <p class="hint">Share a folder link with your logo, photos and videos. Make sure anyone with the link can view it.</p>
+    </fieldset>
+
+    <fieldset id="s6">
+      <legend>6 · Account access</legend>
+      <p class="hint warn"><strong>Please don't type any passwords here.</strong> Just tell us which accounts you have and who they're with. We'll send you simple steps to invite us as a user, and you can remove our access at any time.</p>
+      <div class="checks">
+        <label><input type="checkbox" name="Has accounts" value="Domain registrar">Domain name</label>
+        <label><input type="checkbox" name="Has accounts" value="Website hosting">Website hosting</label>
+        <label><input type="checkbox" name="Has accounts" value="Website builder (Wix/Squarespace/WordPress/Shopify)">Website builder (Wix, WordPress, etc.)</label>
+        <label><input type="checkbox" name="Has accounts" value="Business email">Business email</label>
+        <label><input type="checkbox" name="Has accounts" value="Google Business Profile">Google Business Profile</label>
+        <label><input type="checkbox" name="Has accounts" value="Google Analytics / Search Console">Google Analytics / Search Console</label>
+        <label><input type="checkbox" name="Has accounts" value="Facebook / Instagram">Facebook / Instagram</label>
+        <label><input type="checkbox" name="Has accounts" value="None yet / not sure">None yet / not sure</label>
+      </div>
+      <label class="f">Who are they with?<textarea name="Account providers" rows="2" placeholder="e.g. Domain with GoDaddy, website on Wix, email through Google Workspace"></textarea></label>
+    </fieldset>
+
+    <fieldset id="s7">
+      <legend>7 · Confirm</legend>
+      <label class="f">Anything else we should know?<textarea name="Notes" rows="3" placeholder="Deadlines, launch dates, things that have gone wrong before…"></textarea></label>
+      <label class="agree"><input type="checkbox" id="agree" name="Agreed to terms" value="Yes" required>I've read and agree to the <a href="terms.html" target="_blank" rel="noopener" style="color:var(--accent)">Terms of Service</a>, including the 3-month minimum on the monthly retainer.</label>
+      <label class="agree"><input type="checkbox" name="Info is accurate" value="Yes" required>The information I've given is accurate, and I have the right to share the content and files linked above.</label>
+      <div class="submit-row">
+        <button class="btn" type="submit" id="send">Send my onboarding →</button>
+        <span class="msg" id="msg" role="status"></span>
+      </div>
+    </fieldset>
+  </form>
+</main>
+
+<footer>
+  <span>© 2026 OmniCut Media · Australia</span>
+  <a href="terms.html">Terms of Service</a>
+  <a href="mailto:hello@heyinturi.com.au">hello@heyinturi.com.au</a>
+</footer>
+
+<script>
+(() => {
+  const TO = "hello@heyinturi.com.au";
+  const form = document.getElementById("onb"), msg = document.getElementById("msg"), btn = document.getElementById("send");
+  const say = (t, cls) => { msg.textContent = t; msg.className = "msg " + (cls || ""); };
+
+  const collect = () => {
+    const out = {};
+    new FormData(form).forEach((v, k) => { v = String(v).trim(); if (!v) return; out[k] = out[k] ? out[k] + ", " + v : v; });
+    return out;
+  };
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    let bad = null;
+    form.querySelectorAll("[required]").forEach(f => {
+      const empty = f.type === "checkbox" ? !f.checked : !f.value.trim() || (f.type === "email" && !/^\S+@\S+\.\S+$/.test(f.value));
+      (f.type === "checkbox" ? f.parentElement : f).classList.toggle("invalid", empty);
+      if (empty && !bad) bad = f;
+    });
+    if (bad) { say("Please fill in the required fields marked * and tick both boxes at the end.", "err"); bad.scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+
+    const data = collect();
+    const ref = "ON-" + new Date().toISOString().slice(2, 10).replace(/-/g, "") + "-" + Math.random().toString(36).slice(2, 6).toUpperCase();
+    btn.disabled = true; say("Sending…");
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${TO}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ _subject: `New client onboarding ${ref}: ${data["Business name"]}`, _template: "table", _captcha: "false", _replyto: data.Email, Reference: ref, ...data })
+      });
+      const j = await res.json().catch(() => ({}));
+      if (!res.ok || String(j.success) === "false") throw new Error(j.message || res.status);
+      form.reset();
+      say(`Thanks! Your onboarding (${ref}) has been sent. Adrian will be in touch within 1 business day.`, "ok");
+    } catch (err) {
+      // Fallback: open the client's email app with the answers filled in
+      const body = `Reference: ${ref}\n\n` + Object.entries(data).map(([k, v]) => `${k}: ${v}`).join("\n");
+      location.href = `mailto:${TO}?subject=${encodeURIComponent(`Client onboarding ${ref}: ${data["Business name"]}`)}&body=${encodeURIComponent(body)}`;
+      say("We couldn't send it directly, so your email app has opened with your answers filled in. Just press send.", "err");
+    } finally { btn.disabled = false; }
+  });
+})();
+</script>
+</body>
+</html>
