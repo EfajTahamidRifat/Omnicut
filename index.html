@@ -167,6 +167,9 @@
   @media (max-width: 860px) { .brain-grid { grid-template-columns: 1fr; } .brain-node { font-size: .68rem; padding: .4rem .65rem; transform: translate(-50%, -50%) rotate(var(--a)) translateX(36vw) rotate(calc(var(--a) * -1)); } }
 
   /* ---------- packages ---------- */
+  .brain-demo { margin: 0 0 clamp(3rem, 7vh, 5rem); }
+  .brain-demo video { width: 100%; aspect-ratio: 16 / 9; border-radius: calc(var(--radius) * 1.4); border: 1px solid var(--line); background: #000; box-shadow: 0 40px 100px rgba(0,0,0,.5); }
+  .brain-demo figcaption { margin-top: .9rem; font-size: .88rem; color: var(--muted); }
   .packages { background: var(--bg-2); }
   .pkg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); }
   .pkg { position: relative; display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--line); border-radius: calc(var(--radius) * 1.6); padding: clamp(1.5rem, 3vw, 2.6rem); overflow: hidden; }
@@ -359,7 +362,7 @@
         <p class="sub" data-fade>OmniCut Media is the one team growing businesses call for a site that converts, an AI Business Brain that works around the clock, and tech that just works.</p>
         <div class="hero-ctas" data-fade>
           <a class="btn wa magnetic" data-wa="Hi Adrian, I'd like a quote for my business." href="#" target="_blank" rel="noopener">Start on WhatsApp ↗</a>
-          <a class="btn ghost magnetic" href="#packages">See packages</a>
+          <a class="btn ghost magnetic" href="#brainDemo">Watch the AI demo ▶</a>
         </div>
       </div>
     </div>
@@ -476,6 +479,10 @@
       </div>
       <p>An AI assistant set up on your own business information. It answers customers, captures leads and takes the busywork off your plate, around the clock.</p>
     </div>
+    <figure class="brain-demo" id="brainDemo">
+      <video src="assets/videos/ai-brain-demo.mp4" poster="assets/images/ai-brain-demo.jpg" autoplay muted loop playsinline controls preload="metadata"></video>
+      <figcaption>Watch it work: one evening at an example business. The demo uses example conversations and numbers.</figcaption>
+    </figure>
     <div class="brain-grid">
       <div class="brain-vis" aria-hidden="true">
         <svg id="brainSvg" viewBox="0 0 400 400">
