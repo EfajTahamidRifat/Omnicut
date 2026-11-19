@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OmniCut Media — Websites, Tech Support & Content</title>
-<meta name="description" content="OmniCut Media, founded by Adrian Laas in Australia: websites, technical support and social media content for growing businesses.">
+<title>OmniCut Media — Websites, AI Business Brain & Tech Support</title>
+<meta name="description" content="OmniCut Media, founded by Adrian Laas in Australia: websites, the AI Business Brain, technology advisory, cyber security and social media content for growing businesses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -146,6 +146,69 @@
   .phone { width: min(52%, 230px); aspect-ratio: 9 / 16; border-radius: 1.6rem; overflow: hidden; border: 6px solid #232326; box-shadow: 0 30px 80px rgba(0,0,0,.6); background: #000; }
   .phone video { width: 100%; height: 100%; object-fit: cover; }
 
+  /* ---------- AI business brain ---------- */
+  .brain, .packages, .queue { padding: clamp(6rem, 14vh, 10rem) var(--pad); position: relative; z-index: 3; }
+  .brain { background: var(--bg); }
+  .brain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+  .brain-vis { position: relative; aspect-ratio: 1; max-width: 520px; width: 100%; margin-inline: auto; }
+  .brain-vis svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .brain-vis .spokes line { stroke: rgba(244,239,231,.18); stroke-width: 1; stroke-dasharray: 4 6; }
+  .brain-vis .pulses circle { fill: var(--accent); filter: drop-shadow(0 0 6px var(--accent)); }
+  .brain-core { position: absolute; left: 50%; top: 50%; width: 30%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ff9a63, var(--accent) 55%, #b8320a); display: grid; place-content: center; text-align: center; color: #0b0b0c; box-shadow: 0 0 0 14px rgba(255,90,31,.12), 0 0 80px rgba(255,90,31,.45); }
+  .brain-core span { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1; letter-spacing: -.04em; }
+  .brain-core small { font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; }
+  .brain-node { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(var(--a)) translateX(min(40vw, 200px)) rotate(calc(var(--a) * -1)); padding: .5rem .85rem; border-radius: 99px; background: var(--bg-2); border: 1px solid var(--line); font-size: .78rem; white-space: nowrap; }
+  .brain-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .cap-item { display: grid; grid-template-columns: 2.6rem 1fr; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+  .cap-item b { font-size: .8rem; letter-spacing: .15em; color: var(--accent); font-weight: 500; padding-top: .25rem; }
+  .cap-item h4 { font-size: 1.2rem; font-weight: 600; letter-spacing: -.01em; margin-bottom: .25rem; }
+  .cap-item p { color: var(--muted); font-size: .95rem; }
+  .fine { margin-top: 1.4rem; font-size: .9rem; color: var(--muted); font-family: var(--font-serif); font-style: italic; font-size: 1.1rem; }
+  @media (max-width: 860px) { .brain-grid { grid-template-columns: 1fr; } .brain-node { font-size: .68rem; padding: .4rem .65rem; transform: translate(-50%, -50%) rotate(var(--a)) translateX(36vw) rotate(calc(var(--a) * -1)); } }
+
+  /* ---------- packages ---------- */
+  .packages { background: var(--bg-2); }
+  .pkg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); }
+  .pkg { position: relative; display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--line); border-radius: calc(var(--radius) * 1.6); padding: clamp(1.5rem, 3vw, 2.6rem); overflow: hidden; }
+  .pkg.featured { border-color: var(--accent); background: linear-gradient(160deg, rgba(255,90,31,.14), var(--bg) 45%); }
+  .pkg-tag { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  .pkg h3 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; letter-spacing: -.03em; line-height: 1.05; margin: .9rem 0 1.4rem; }
+  .price { display: flex; align-items: baseline; gap: .3rem; flex-wrap: wrap; margin-bottom: 1.6rem; padding-bottom: 1.6rem; border-bottom: 1px solid var(--line); }
+  .price .cur { font-size: 1.8rem; font-weight: 500; color: var(--muted); }
+  .price .amt { font-size: clamp(3.4rem, 7vw, 5.6rem); font-weight: 600; letter-spacing: -.05em; line-height: .9; font-variant-numeric: tabular-nums; }
+  .price .per { font-size: .9rem; color: var(--muted); margin-left: .5rem; }
+  .pkg ul { list-style: none; display: grid; gap: .7rem; margin-bottom: 2rem; flex: 1; }
+  .pkg li { display: flex; gap: .7rem; align-items: baseline; font-size: .98rem; }
+  .pkg li::before { content: "✓"; color: var(--accent); font-weight: 700; }
+  .pkg li strong { color: var(--fg); font-weight: 600; }
+  .pkg-ctas { display: flex; flex-wrap: wrap; gap: .7rem; }
+  .pkg-note { margin-top: 1.8rem; color: var(--muted); font-size: .88rem; max-width: 46rem; }
+  @media (max-width: 860px) { .pkg-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- request queue ---------- */
+  .queue { background: var(--bg); }
+  .queue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+  .queue h2 { font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 600; letter-spacing: -.04em; line-height: .95; }
+  .q-lead { color: var(--muted); font-size: 1.05rem; max-width: 30rem; margin: 1.4rem 0 2rem; }
+  .q-steps { list-style: none; counter-reset: q; display: grid; gap: 1rem; }
+  .q-steps li { counter-increment: q; display: grid; grid-template-columns: 2.4rem 1fr; column-gap: .8rem; }
+  .q-steps li::before { content: counter(q, decimal-leading-zero); grid-row: span 2; width: 2.4rem; height: 2.4rem; border-radius: 50%; border: 1px solid var(--accent); color: var(--accent); display: grid; place-items: center; font-size: .75rem; }
+  .q-steps b { font-weight: 600; }
+  .q-steps span { color: var(--muted); font-size: .92rem; }
+  .q-form { background: var(--bg-2); border: 1px solid var(--line); border-radius: calc(var(--radius) * 1.6); padding: clamp(1.3rem, 3vw, 2.2rem); display: grid; gap: 1rem; }
+  .q-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .q-form label { display: grid; gap: .4rem; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .q-form input, .q-form select, .q-form textarea { font: inherit; font-size: 1rem; letter-spacing: 0; text-transform: none; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: .7rem; padding: .8rem .9rem; outline: none; transition: border-color .25s; resize: vertical; }
+  .q-form input:focus, .q-form select:focus, .q-form textarea:focus { border-color: var(--accent); }
+  .q-form .invalid { border-color: #ff4d4d; }
+  .q-form .btn { justify-self: start; }
+  .q-msg { font-size: .92rem; color: #6ee7a0; min-height: 1.2em; }
+  .q-msg.err { color: #ff8a8a; }
+  @media (max-width: 860px) { .queue-grid, .q-row { grid-template-columns: 1fr; } }
+  .contact .sub a.mail { color: var(--fg); border-bottom: 1px solid var(--accent); }
+  .contact .btn.ghost.big { margin-left: .6rem; }
+  @media (max-width: 520px) { .contact .btn.ghost.big { margin: .8rem 0 0; } }
+
   /* ---------- work (horizontal) ---------- */
   .work { position: relative; background: var(--bg); overflow: hidden; z-index: 3; }
   .work-pin { height: 100svh; display: flex; flex-direction: column; justify-content: center; }
@@ -265,6 +328,8 @@
   <nav class="links">
     <a href="#story">Story</a>
     <a href="#services">Services</a>
+    <a href="#brain">AI Brain</a>
+    <a href="#packages">Packages</a>
     <a href="#work">Work</a>
     <a href="#process">Process</a>
     <a href="#about">Adrian</a>
@@ -284,17 +349,17 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-media">
-      <video id="heroVid" data-stock="41274" data-fallback="assets/videos/work3.mp4" autoplay muted loop playsinline preload="auto"></video>
+      <video id="heroVid" data-stock="41274" data-fallback="assets/videos/snapit.mp4" autoplay muted loop playsinline preload="auto"></video>
     </div>
     <div class="scroll-cue">Scroll the story</div>
     <div class="hero-inner">
-      <div class="eyebrow" data-fade>Websites · Tech support · Content — Australia</div>
+      <div class="eyebrow" data-fade>Websites · AI Business Brain · Tech advisory — Australia</div>
       <h1 data-split>We cut through <em>the noise.</em></h1>
       <div class="hero-row">
-        <p class="sub" data-fade>OmniCut Media is the one team growing businesses call to get a site that converts, tech that just works, and social content people actually stop for.</p>
+        <p class="sub" data-fade>OmniCut Media is the one team growing businesses call for a site that converts, an AI Business Brain that works around the clock, and tech that just works.</p>
         <div class="hero-ctas" data-fade>
           <a class="btn wa magnetic" data-wa="Hi Adrian, I'd like a quote for my business." href="#" target="_blank" rel="noopener">Start on WhatsApp ↗</a>
-          <a class="btn ghost magnetic" href="#story">See how we work</a>
+          <a class="btn ghost magnetic" href="#packages">See packages</a>
         </div>
       </div>
     </div>
@@ -306,11 +371,11 @@
       <span class="marquee-item">Websites <span class="dot"></span></span>
       <span class="marquee-item o">Tech Support <span class="dot"></span></span>
       <span class="marquee-item">Social Content <span class="dot"></span></span>
-      <span class="marquee-item o">One Partner <span class="dot"></span></span>
+      <span class="marquee-item o">AI Business Brain <span class="dot"></span></span>
       <span class="marquee-item">Websites <span class="dot"></span></span>
       <span class="marquee-item o">Tech Support <span class="dot"></span></span>
       <span class="marquee-item">Social Content <span class="dot"></span></span>
-      <span class="marquee-item o">One Partner <span class="dot"></span></span>
+      <span class="marquee-item o">AI Business Brain <span class="dot"></span></span>
     </div>
   </div>
 
@@ -332,7 +397,7 @@
     <div class="sec-head">
       <div>
         <div class="chapter-label">Chapter 02 — The fix</div>
-        <h2 data-split style="margin-top:1rem">Three pillars. <em>One partner.</em></h2>
+        <h2 data-split style="margin-top:1rem">One partner. <em>Everything covered.</em></h2>
       </div>
       <p>Pick one, or let us run all three. Everything is scoped clearly and talked through on WhatsApp — no jargon, no runaround.</p>
     </div>
@@ -363,15 +428,15 @@
 
     <article class="pillar">
       <div class="col-text">
-        <div class="num">02 / TECH SUPPORT</div>
-        <h3>Technical help that <em>just works</em>.</h3>
-        <p class="lead">A friendly, reliable technical partner for the things that slow your business down — so problems get solved, not just logged.</p>
+        <div class="num">02 / TECHNOLOGY ADVISORY</div>
+        <h3>Tech that <em>just works</em> — and stays safe.</h3>
+        <p class="lead">Your ongoing technical partner: website support, maintenance, updates and cyber security, plus straight advice on the tools your business should be using.</p>
         <ul>
-          <li>Website fixes, maintenance, security &amp; backups</li>
-          <li>Domain, email, hosting &amp; integrations sorted</li>
-          <li>Straight answers when something breaks</li>
+          <li>Website support, maintenance &amp; updates</li>
+          <li>Cyber security checks, backups &amp; monitoring</li>
+          <li>Technology advice — domain, email, hosting &amp; tools</li>
         </ul>
-        <div><a class="btn wa" data-wa="Hi Adrian, I need some technical support." href="#" target="_blank" rel="noopener">Ask about support ↗</a></div>
+        <div><a class="btn wa" data-wa="Hi Adrian, I'd like to talk about technology advisory and support." href="#" target="_blank" rel="noopener">Ask about advisory ↗</a></div>
       </div>
       <div class="col-vis">
         <video class="bgvid" data-stock="50742" autoplay muted loop playsinline preload="metadata"></video>
@@ -402,20 +467,139 @@
     </article>
   </section>
 
+  <!-- AI BUSINESS BRAIN -->
+  <section class="brain" id="brain">
+    <div class="sec-head">
+      <div>
+        <div class="chapter-label">Chapter 03 — The brain</div>
+        <h2 data-split style="margin-top:1rem">Meet your <em>AI Business Brain.</em></h2>
+      </div>
+      <p>An AI assistant set up on your own business information. It answers customers, captures leads and takes the busywork off your plate, around the clock.</p>
+    </div>
+    <div class="brain-grid">
+      <div class="brain-vis" aria-hidden="true">
+        <svg id="brainSvg" viewBox="0 0 400 400">
+          <g class="spokes"></g>
+          <g class="pulses"></g>
+        </svg>
+        <div class="brain-core"><span>AI</span><small>Business Brain</small></div>
+        <div class="brain-node" style="--a:-90deg">Website chat</div>
+        <div class="brain-node" style="--a:-30deg">Leads</div>
+        <div class="brain-node" style="--a:30deg">Emails &amp; quotes</div>
+        <div class="brain-node" style="--a:90deg">Knowledge base</div>
+        <div class="brain-node" style="--a:150deg">Bookings</div>
+        <div class="brain-node" style="--a:210deg">Insights</div>
+      </div>
+      <div class="brain-list">
+        <div class="cap-item"><b>01</b><div><h4>24/7 website assistant</h4><p>Answers customer questions from your own prices, services and policies, day and night.</p></div></div>
+        <div class="cap-item"><b>02</b><div><h4>Lead capture &amp; follow-up</h4><p>Qualifies enquiries, collects contact details and sends hot leads straight to you.</p></div></div>
+        <div class="cap-item"><b>03</b><div><h4>Emails, quotes &amp; replies drafted</h4><p>Written in your tone and ready for you to check and send. Saves hours every week.</p></div></div>
+        <div class="cap-item"><b>04</b><div><h4>Your business knowledge in one place</h4><p>Processes, FAQs and how-tos. Your staff ask, and the Brain answers.</p></div></div>
+        <div class="cap-item"><b>05</b><div><h4>Bookings &amp; admin automations</h4><p>Reminders, forms and follow-ups that run themselves.</p></div></div>
+        <div class="cap-item"><b>06</b><div><h4>Monthly insights</h4><p>What customers are asking, where leads come from and what to improve next.</p></div></div>
+        <p class="fine">You set the rules. The Brain only uses the information you approve, and you stay in control of what goes out in your name.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="packages" id="packages">
+    <div class="sec-head">
+      <div>
+        <div class="chapter-label">Chapter 04 — The packages</div>
+        <h2 data-split style="margin-top:1rem">Simple pricing. <em>No surprises.</em></h2>
+      </div>
+      <p>Start with a new or rebuilt website and your AI Business Brain, then keep everything running, safe and improving on a monthly retainer.</p>
+    </div>
+    <div class="pkg-grid">
+      <article class="pkg">
+        <div class="pkg-tag">Launch package · once-off</div>
+        <h3>Website + AI Business Brain</h3>
+        <div class="price"><span class="cur">$</span><span class="amt" data-count="3500">3,500</span><span class="per">AUD once-off</span></div>
+        <ul>
+          <li>New website build, or a rebuild of your current site</li>
+          <li>AI Business Brain set up on your business information</li>
+          <li>Mobile-first, fast, with SEO basics and enquiry paths</li>
+          <li>Lead capture connected to your email and WhatsApp</li>
+          <li><span><strong>30 days of service included</strong> after launch</span></li>
+        </ul>
+        <div class="pkg-ctas">
+          <a class="btn wa magnetic" data-wa="Hi Adrian, I'm interested in the $3,500 Website + AI Business Brain package." href="#" target="_blank" rel="noopener">Start on WhatsApp ↗</a>
+          <a class="btn ghost" href="mailto:hello@heyinturi.com.au?subject=Launch%20package%20-%20Website%20%2B%20AI%20Business%20Brain">Email us</a>
+        </div>
+      </article>
+      <article class="pkg featured">
+        <div class="pkg-tag">Monthly retainer</div>
+        <h3>Website care + AI business consulting</h3>
+        <div class="price"><span class="cur">$</span><span class="amt" data-count="1999">1,999</span><span class="per">AUD / month</span></div>
+        <ul>
+          <li>Website support, maintenance &amp; updates</li>
+          <li>Cyber security checks, backups &amp; monitoring</li>
+          <li>Technology advisory: straight advice on tools &amp; systems</li>
+          <li>AI business consulting, with your AI Business Brain kept tuned and growing</li>
+          <li>Priority request queue, handled in order</li>
+        </ul>
+        <div class="pkg-ctas">
+          <a class="btn wa magnetic" data-wa="Hi Adrian, I'm interested in the $1,999/month website care + AI consulting retainer." href="#" target="_blank" rel="noopener">Start on WhatsApp ↗</a>
+          <a class="btn ghost" href="mailto:hello@heyinturi.com.au?subject=Monthly%20retainer%20enquiry">Email us</a>
+        </div>
+      </article>
+    </div>
+    <p class="pkg-note">Prices in Australian dollars. Third-party costs such as domains, hosting, AI usage and paid software are quoted to you upfront before you sign up, and billed at cost.</p>
+  </section>
+
+  <!-- REQUEST QUEUE -->
+  <section class="queue" id="queue">
+    <div class="queue-grid">
+      <div>
+        <div class="chapter-label">Chapter 05 — The queue</div>
+        <h2 data-split style="margin-top:1rem">Every request, <em>in line.</em></h2>
+        <p class="q-lead">Retainer clients send requests through the queue. Each one gets a ticket number and is worked on in the order it arrives. Nothing gets lost in a chat thread.</p>
+        <ol class="q-steps">
+          <li><b>Submit</b><span>Tell us what you need using the form.</span></li>
+          <li><b>Get a ticket</b><span>You receive a reference number straight away.</span></li>
+          <li><b>Worked in order</b><span>First in, first done. Urgent security issues jump the line.</span></li>
+          <li><b>Done &amp; confirmed</b><span>We let you know when it's live.</span></li>
+        </ol>
+      </div>
+      <form class="q-form" id="queueForm" novalidate>
+        <div class="q-row">
+          <label>Your name<input name="name" required autocomplete="name"></label>
+          <label>Business<input name="business" required autocomplete="organization"></label>
+        </div>
+        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <label>Request type
+          <select name="type">
+            <option>Website update / change</option>
+            <option>Something is broken</option>
+            <option>Security concern (urgent)</option>
+            <option>AI Business Brain change</option>
+            <option>Technology advice</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>What do you need?<textarea name="details" rows="4" required placeholder="Page, link, screenshot notes, deadline…"></textarea></label>
+        <button class="btn magnetic" type="submit">Add to the queue →</button>
+        <p class="q-msg" id="queueMsg" role="status"></p>
+      </form>
+    </div>
+  </section>
+
   <!-- WORK (horizontal) -->
   <section class="work" id="work">
     <div class="work-pin" id="workPin">
       <div class="work-head">
         <div>
-          <div class="chapter-label">Chapter 03 — The proof</div>
+          <div class="chapter-label">Chapter 06 — The proof</div>
           <h2 style="margin-top:1rem">Content in <em>motion.</em></h2>
         </div>
-        <p style="color:var(--muted);max-width:22rem">Sample reels, made for RaceSnap AI. Tap a clip to hear it.</p>
+        <p style="color:var(--muted);max-width:22rem">Sample reels for RaceSnap AI and OnlyPetty. Tap a clip to hear it.</p>
       </div>
       <div class="work-track" id="workTrack">
         <div class="work-card portrait" data-cursor="Sound"><video data-sound src="assets/videos/work1.mp4" poster="assets/images/work1.jpg" autoplay muted loop playsinline preload="auto"></video><div class="cap"><h4>Founder story</h4><span>Sample · RaceSnap AI</span></div></div>
         <div class="work-card portrait" data-cursor="Sound"><video data-sound src="assets/videos/work2.mp4" poster="assets/images/work2.jpg" autoplay muted loop playsinline preload="auto"></video><div class="cap"><h4>Race-day energy</h4><span>Sample · RaceSnap AI</span></div></div>
-        <div class="work-card wide" data-cursor="Sound"><video data-sound src="assets/videos/work3.mp4" poster="assets/images/work3.jpg" autoplay muted loop playsinline preload="auto"></video><div class="cap"><h4>Brand &amp; campaign video</h4><span>Sample · RaceSnap AI</span></div></div>
+        <div class="work-card portrait" data-cursor="Sound"><video data-sound src="assets/videos/snapit.mp4" poster="assets/images/snapit.jpg" autoplay muted loop playsinline preload="auto"></video><div class="cap"><h4>"Snap it" street campaign</h4><span>Sample · RaceSnap AI</span></div></div>
+        <div class="work-card portrait" data-cursor="Sound"><video data-sound src="assets/videos/onlypetty.mp4" poster="assets/images/onlypetty.jpg" autoplay muted loop playsinline preload="auto"></video><div class="cap"><h4>OnlyPetty weekly</h4><span>Sample · OnlyPetty</span></div></div>
         <div class="work-end">
           <h3>Your brand could be <em>next.</em></h3>
           <div><a class="btn wa magnetic" data-wa="Hi Adrian, I saw your work and I'd like content for my business." href="#" target="_blank" rel="noopener">Let's talk ↗</a></div>
@@ -428,7 +612,7 @@
   <section class="clients" id="clients">
     <div class="sec-head">
       <div>
-        <div class="chapter-label">Chapter 04 — The people we back</div>
+        <div class="chapter-label">Chapter 07 — The people we back</div>
         <h2 data-split style="margin-top:1rem">Trusted by <em>builders.</em></h2>
       </div>
       <p>Founders and teams we've worked with — click through and see for yourself.</p>
@@ -438,6 +622,7 @@
       <a class="client-row" href="https://www.racesnap.ai" target="_blank" rel="noopener"><span class="n">02</span><h3>RaceSnap AI</h3><span class="meta">Video &amp; content ↗</span></a>
       <a class="client-row" href="https://efajtahamid.monster" target="_blank" rel="noopener"><span class="n">03</span><h3>efajtahamid.monster</h3><span class="meta">Visit ↗</span></a>
       <a class="client-row" href="https://neptuv.xyz" target="_blank" rel="noopener"><span class="n">04</span><h3>neptuv.xyz</h3><span class="meta">Visit ↗</span></a>
+      <a class="client-row" href="https://onlypetty.com.au" target="_blank" rel="noopener"><span class="n">05</span><h3>OnlyPetty</h3><span class="meta">Video &amp; content ↗</span></a>
       <a class="client-row more" data-wa="Hi Adrian, I'd like to join your client list." href="#" target="_blank" rel="noopener"><span class="n">+</span><h3>…and more. You next?</h3><span class="meta">WhatsApp ↗</span></a>
     </div>
   </section>
@@ -447,7 +632,7 @@
     <video class="bgvid" data-stock="41293" autoplay muted loop playsinline preload="metadata"></video>
     <div class="sec-head">
       <div>
-        <div class="chapter-label">Chapter 05 — The method</div>
+        <div class="chapter-label">Chapter 08 — The method</div>
         <h2 data-split style="margin-top:1rem">From hello to <em>live</em> in four moves.</h2>
       </div>
     </div>
@@ -467,7 +652,7 @@
       <div class="about-tag">Adrian Laas · Australia</div>
     </div>
     <div>
-      <div class="chapter-label">Chapter 06 — The person</div>
+      <div class="chapter-label">Chapter 09 — The person</div>
       <h2 data-split>Meet <em>Adrian Laas.</em></h2>
       <p>Founder &amp; creative lead of OmniCut Media, working from Australia with businesses that want a partner they can actually reach.</p>
       <p>When you work with OmniCut you deal with Adrian directly — one person who understands your website, your tech and your content, and answers on WhatsApp.</p>
@@ -482,19 +667,22 @@
     <div class="contact-inner">
       <div class="chapter-label">Final chapter — Your move</div>
       <h2 data-split>Let's cut <em>something great.</em></h2>
-      <p class="sub">Tell us what you're building. Message Adrian on WhatsApp — +61 451 335 143 — and get a reply with next steps.</p>
+      <p class="sub">Tell us what you're building. Message Adrian on WhatsApp — +61 451 335 143 — or email <a class="mail" href="mailto:hello@heyinturi.com.au">hello@heyinturi.com.au</a> and get a reply with next steps.</p>
       <a class="btn wa big magnetic" data-wa="Hi Adrian, I'd like to talk about a project with OmniCut Media." href="#" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Z"/></svg>
         Chat on WhatsApp
       </a>
+      <a class="btn ghost big magnetic" href="mailto:hello@heyinturi.com.au?subject=Enquiry%20-%20OmniCut%20Media">Email us ↗</a>
       <div class="chips">
         <a class="chip" data-wa="Hi Adrian, I need a new website." href="#" target="_blank" rel="noopener">I need a website</a>
         <a class="chip" data-wa="Hi Adrian, I need technical support." href="#" target="_blank" rel="noopener">I need tech support</a>
+        <a class="chip" data-wa="Hi Adrian, I'd like to know more about the AI Business Brain." href="#" target="_blank" rel="noopener">AI Business Brain</a>
+        <a class="chip" data-wa="Hi Adrian, I'm interested in the $1,999/month retainer." href="#" target="_blank" rel="noopener">Monthly retainer</a>
         <a class="chip" data-wa="Hi Adrian, I need social media content." href="#" target="_blank" rel="noopener">I need content</a>
         <a class="chip" data-wa="Hi Adrian, I'd like all three services — can we talk?" href="#" target="_blank" rel="noopener">All of the above</a>
       </div>
     </div>
-    <div class="foot"><span>© 2026 OmniCut Media · Australia</span><span>Founded by Adrian Laas</span><span>WhatsApp +61 451 335 143</span></div>
+    <div class="foot"><span>© 2026 OmniCut Media · Australia</span><span>Founded by Adrian Laas</span><span>WhatsApp +61 451 335 143</span><a href="mailto:hello@heyinturi.com.au">hello@heyinturi.com.au</a></div>
   </section>
 </main>
 
@@ -672,6 +860,48 @@
   gsap.from(".browser-body .sk", { scaleX: 0, duration: 1, stagger: .1, ease: "power3.out", scrollTrigger: { trigger: ".browser", start: "top 80%" } });
   gsap.from(".blocks div", { y: 24, opacity: 0, stagger: .1, duration: .8, scrollTrigger: { trigger: ".blocks", start: "top 90%" } });
   gsap.from(".status-row", { x: 60, opacity: 0, stagger: .15, duration: .9, ease: "power3.out", scrollTrigger: { trigger: ".status-card", start: "top 80%" } });
+
+  /* ---------- AI brain hub ---------- */
+  (() => {
+    const svg = document.getElementById("brainSvg"); if (!svg) return;
+    const NS = "http://www.w3.org/2000/svg", sp = svg.querySelector(".spokes"), pu = svg.querySelector(".pulses");
+    const angs = [...document.querySelectorAll(".brain-node")].map(n => parseFloat(n.style.getPropertyValue("--a")));
+    const ends = angs.map(a => { const r = a * Math.PI / 180; return { x: 200 + Math.cos(r) * 170, y: 200 + Math.sin(r) * 170 }; });
+    ends.forEach(e => { const l = document.createElementNS(NS, "line"); l.setAttribute("x1", 200); l.setAttribute("y1", 200); l.setAttribute("x2", e.x); l.setAttribute("y2", e.y); sp.appendChild(l); });
+    gsap.from(".brain-node", { scale: 0, opacity: 0, duration: .8, stagger: .08, ease: "back.out(1.7)", scrollTrigger: { trigger: ".brain-vis", start: "top 75%" } });
+    gsap.from(".brain-core", { scale: .4, opacity: 0, duration: 1.1, ease: "elastic.out(1,.5)", scrollTrigger: { trigger: ".brain-vis", start: "top 75%" } });
+    gsap.from(".brain-vis .spokes line", { opacity: 0, duration: .6, stagger: .08, scrollTrigger: { trigger: ".brain-vis", start: "top 75%" } });
+    gsap.to(".brain-core", { scale: 1.05, duration: 1.6, yoyo: true, repeat: -1, ease: "sine.inOut" });
+    if (!reduced) ends.forEach((e, i) => {
+      const c = document.createElementNS(NS, "circle"); c.setAttribute("r", 3.5); pu.appendChild(c);
+      const inbound = i % 2 === 0, from = inbound ? e : { x: 200, y: 200 }, to = inbound ? { x: 200, y: 200 } : e;
+      c.setAttribute("cx", from.x); c.setAttribute("cy", from.y);
+      gsap.fromTo(c, { attr: { cx: from.x, cy: from.y }, opacity: 0 }, { attr: { cx: to.x, cy: to.y }, opacity: 1, duration: 1.6, ease: "power1.inOut", repeat: -1, repeatDelay: .4, delay: i * .35 });
+    });
+    gsap.from(".cap-item", { y: 30, opacity: 0, stagger: .08, duration: .8, ease: "power3.out", scrollTrigger: { trigger: ".brain-list", start: "top 80%" } });
+  })();
+
+  /* ---------- packages ---------- */
+  gsap.from(".pkg", { y: 60, opacity: 0, stagger: .15, duration: 1, ease: "power3.out", scrollTrigger: { trigger: ".pkg-grid", start: "top 80%" } });
+  document.querySelectorAll(".price .amt[data-count]").forEach(el => {
+    const n = { v: 0 }, target = +el.dataset.count;
+    gsap.to(n, { v: target, duration: 1.6, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 85%" }, onUpdate: () => el.textContent = Math.round(n.v).toLocaleString("en-AU") });
+  });
+
+  /* ---------- request queue (email-based ticket) ---------- */
+  const qf = document.getElementById("queueForm"), qm = document.getElementById("queueMsg");
+  qf.addEventListener("submit", e => {
+    e.preventDefault();
+    let ok = true;
+    qf.querySelectorAll("[required]").forEach(f => { const bad = !f.value.trim() || (f.type === "email" && !/^\S+@\S+\.\S+$/.test(f.value)); f.classList.toggle("invalid", bad); if (bad) ok = false; });
+    if (!ok) { qm.className = "q-msg err"; qm.textContent = "Please fill in your name, business, a valid email and your request."; return; }
+    const d = Object.fromEntries(new FormData(qf)), now = new Date();
+    const ref = "OC-" + now.toISOString().slice(2, 10).replace(/-/g, "") + "-" + Math.random().toString(36).slice(2, 6).toUpperCase();
+    const subject = `[Queue ${ref}] ${d.type} — ${d.business}`;
+    const body = `Ticket: ${ref}\nSubmitted: ${now.toLocaleString("en-AU")}\n\nName: ${d.name}\nBusiness: ${d.business}\nEmail: ${d.email}\nType: ${d.type}\n\nRequest:\n${d.details}`;
+    location.href = `mailto:hello@heyinturi.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    qm.className = "q-msg"; qm.textContent = `Your ticket is ${ref}. Your email app is opening. Press send to join the queue.`;
+  });
 
   /* ---------- horizontal work (desktop) ---------- */
   const mm = gsap.matchMedia();
